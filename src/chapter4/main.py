@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Chapter: story 1
+"""Chapter 4: 第四次元「歪んでいく世界」
 """
 ## path
 import os
@@ -31,7 +31,7 @@ def ep_tmp(w: World):
             )
 
 ## chapter
-def ch_tmp(w: World):
-    return w.chapter("Ch: xxx",
+def ch_warp_world(w: World):
+    return w.chapter("第四次元　歪んでいく世界",
             ep_tmp(w),
-            )
+            note="＜あとで＞")

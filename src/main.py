@@ -14,7 +14,10 @@ from config import PERSONS, AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAY
 ## assets
 from storybuilder.assets import basic, accessory
 ## local files
-from src.chapter.main import ch_tmp
+from src.chapter1.main import ch_point_and_line
+from src.chapter2.main import ch_thin_world
+from src.chapter3.main import ch_real_world
+from src.chapter4.main import ch_warp_world
 
 ## define alias
 W = Writer
@@ -22,23 +25,10 @@ _ = Writer.getWho()
 
 ################################################################
 #
-# Sample step:
-# 1) Create the world
-#       世界を作成する。
-# 2) Create a new chapter
-#       章の作成。
-# 3) Create a episode
-#       エピソード作成。
-# 4) Create a new scene
-#       シーン作成。物語のベース。ここに様々なActionを追加する。
-# 5) Create a new stage
-#       舞台作成。シーンに必須要素
-# 6) Create a new day and time
-#       日時作成。シーンのサブ要素
-# 7) Add a scene plot
-#       シーンプロットの作成。概要のないシーンは原則使えない
-# 8) Add scene actions
-#       シーンアクションの追加。
+#   1.一次元「点と線で繋がる世界」
+#   2.二次元「薄っぺらなこの世界」
+#   3.三次元「形を持ち始めた、現実世界」
+#   4.四次元「歪んでいく、幾つもの世界」
 #
 ################################################################
 
@@ -47,27 +37,31 @@ _ = Writer.getWho()
 def create_world():
     """Create a world.
     """
-    w = World("title")
+    w = World("明日の向こう側――End of The World")
     w.setCommonData()
     w.setAssets(basic.ASSET)
     w.setAssets(accessory.ASSET)
     w.buildDB(PERSONS,
             AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS,
             RUBIS, LAYERS)
-    w.setBaseDate(2020)
+    w.setBaseDate(2018)
     w.setBaseArea("Tokyo")
+    w.setColumnRow(42,34)
     # set textures
     # w.entryBlock()
     # w.entryHistory()
     # w.entryLifeNote()
-    w.setOutline("__outline__")
+    w.setOutline("高校二年の真里は失踪した同級生の根岸を探し、彼の父の研究に行き当たる。それは「時間」についての研究だった。真里と根岸の次元を超えた交流が始まる")
     return w
 
 
 def main(): # pragma: no cover
     w = create_world()
     return w.build(
-            ch_tmp(w),
+            ch_point_and_line(w),
+            ch_thin_world(w),
+            ch_real_world(w),
+            ch_warp_world(w),
             )
 
 

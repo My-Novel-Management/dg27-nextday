@@ -29,14 +29,25 @@
 
 PERSONS = (
         # Tag / 氏,名 / 歳 / 誕生日 / 性別 / 職業 / 呼称 / 紹介
+        ("mari", "真里", "由月,真里", 17,(1,1), "female", "高校生", "me:わたし"),
+        ("negi", "根岸", "根岸,博明", 17,(1,1), "male", "高校生", "me:俺"),
+        ## sub
+        ## school
+        ## univ
+        ## others
         )
 
 AREAS = (
         # Tag / 名前 / x,y / 備考
+        ("Kyoto", "京都市", 13546,3500),
         )
 
 STAGES = (
         # Tag / 名前 / Area / 紹介
+        ("highschool", "高校", "Kyoto"),
+        ("univ", "大学", "Kyoto"),
+        ("myhome", "由月家", "Kyoto"),
+        ("hishome", "根岸家", "Kyoto"),
         )
 
 DAYS = (
